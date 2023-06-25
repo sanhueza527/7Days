@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+<script>
+function soma(v1, v2){
+    return Number(v1) + Number(v2);
+}
+
+function subtracao(v1, v2){
+    return Number(valor1) - Number(valor2);
+}
+
+function multiplicacao(v1, v2){
+    return Number(v1) * Number(v2);
+}
+
+function divisao(v1, v2){
+    return Number(v1) / Number(v2);
+}
+
+let v1;
+let v2;
+let operacao = "";
+
+do {
+    operacao = prompt(`Operação ? 'soma', 'subtração', 'multiplicação', 'divisão' ou 'sair'.`);	
+    while (operacao != "soma" && operacao != "subtração" && operacao != "multiplicação" && operacao != "divisão" && operacao != "sair") {  //enquanto o texto lido for diferente de "soma", "subtração", "multiplicação", "divisão" e "sair", exibir que não foi reconhecido e perguntar novamente
+	alert(`Operação não reconhecida!`);
+	operacao = prompt(`Qual operação você quer realizar? Responda 'soma', 'subtração', 'multiplicação', 'divisão' ou 'sair'.`);
+    }
+    if (operacao === "sair"){  
+		break;	
+    }
+    v1 = prompt(`Insira o primeiro valor:`);
+    v2 = prompt(`Insira o segundo valor:`);
+    switch (operacao) {
+        case 'soma':
+          alert(`O resultado da ${operacao} é ${soma(v1, v2)}`);
+          break;
+        case 'subtração':
+            alert(`O resultado da ${operacao} é ${subtracao(v1, v2)}`);
+            break;
+        case 'multiplicação':
+            alert(`O resultado da ${operacao} é ${multiplicacao(v1, v2)}`);
+            break;
+        case 'divisão':
+            alert(`O resultado da ${operacao} é ${divisao(v1, v2)}`);
+            break;
+    }
+} while(operacao === "soma" || operacao === "subtração" || operacao === "multiplicação" || operacao === "divisão")
+alert(`Até a próxima!`);
+
+</script>
+    
+</body>
+</html>
